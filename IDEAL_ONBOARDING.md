@@ -1,3 +1,9 @@
-# Spot by NetApp Connector - IDEAL_ONBOARDING.md
+# Spot by NetApp Connector — Ideal Onboarding & First Launch
 
-Standard documentation for Spot by NetApp Connector in Imperal Cloud.
+**Compliance:** ONBOARDING_FIRST_LAUNCH_STANDARD.md
+
+## Шаги онбординга
+1. **Экран первого запуска:** Назначение коннектора Spot by NetApp и требования к правам доступа.
+2. **Ввод учетных данных:** Форма с явными лейблами, валидацией формата и подсказкой для получения ключа.
+3. **Проверка подключения:** Немедленный вызов `GET /aws/ec2/elastigroup` с отображением статуса.
+4. **Empty State:** Наглядные рекомендации по первому действию, если данных нет.

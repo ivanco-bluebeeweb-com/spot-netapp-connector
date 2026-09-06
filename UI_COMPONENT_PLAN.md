@@ -1,3 +1,8 @@
-# Spot by NetApp Connector - UI_COMPONENT_PLAN.md
+# Spot by NetApp Connector — UI Component Plan
 
-Standard documentation for Spot by NetApp Connector in Imperal Cloud.
+**Compliance:** UI_INTERFACE_STANDARD.md
+
+## Интерфейс
+- **Левый сайдбар:** Форма подключения на всю ширину контейнера, все инпуты с лейблами и контекстными плейсхолдерами.
+- **Центральная зона:** Карточки статуса подключения, таблица сущностей (эласигруппы (/aws/ec2/elastigroup)), журнал операций.
+- **Модальные окна:** Предупреждения и подтверждения для любых деструктивных или модифицирующих действий.
