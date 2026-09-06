@@ -4,7 +4,7 @@ import json
 from imperal_sdk import ChatExtension, Extension
 
 ext = Extension(
-    "spot_netapp-connector",
+    "spot-netapp-connector",
     version="0.1.0",
     display_name="Spot by NetApp",
     icon="icon.svg",

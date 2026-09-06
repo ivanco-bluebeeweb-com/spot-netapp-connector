@@ -42,7 +42,7 @@ async def resolve_connection(ctx, connection_id: str = "") -> dict | None:
     "Connect Spot by NetApp account via credentials.",
     action_type="write",
     chain_callable=True,
-    event="spot_netapp-connector.connect_spot_netapp",
+    event="spot-netapp-connector.connect_spot_netapp",
     effects=["create:connection"],
     data_model=ConnectParams
 )
@@ -81,7 +81,7 @@ async def list_connections(params: NoParams, ctx) -> ActionResult[ConnectionList
     "Disconnect Spot by NetApp account.",
     action_type="write",
     chain_callable=True,
-    event="spot_netapp-connector.disconnect_spot_netapp",
+    event="spot-netapp-connector.disconnect_spot_netapp",
     effects=["delete:connection"],
     data_model=ConnectionIdParams
 )
