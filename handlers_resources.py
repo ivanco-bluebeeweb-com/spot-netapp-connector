@@ -19,7 +19,7 @@ async def list_costs(params: ListCostRecordParams, ctx) -> ActionResult:
             rid = str(r.get("id") or r.get("key") or r.get("uuid") or "unknown")
             rname = r.get("name") or r.get("title") or r.get("label") or rid
             items.append({"id": rid, "name": rname, "status": r.get("status"), "created_at": r.get("createdAt") or r.get("created_at"), "raw": r})
-        return ActionResult.ok({"costs": items, "total": len(items)}, summary=f"Found {len(items)} costs.")
+        return ActionResult.success({"costs": items, "total": len(items)}, summary=f"Found {len(items)} costs.")
     except Exception as e:
         return ActionResult.error(f"Error listing costs: {e}")
 
@@ -30,7 +30,7 @@ async def get_costrecord(params: GetCostRecordParams, ctx) -> ActionResult:
         r = await client.get_costrecord(params.costrecord_id)
         rid = str(r.get("id") or params.costrecord_id)
         rname = r.get("name") or r.get("title") or rid
-        return ActionResult.ok({"id": rid, "name": rname, "status": r.get("status"), "created_at": r.get("createdAt") or r.get("created_at"), "raw": r}, summary=f"Retrieved CostRecord {rid}.")
+        return ActionResult.success({"id": rid, "name": rname, "status": r.get("status"), "created_at": r.get("createdAt") or r.get("created_at"), "raw": r}, summary=f"Retrieved CostRecord {rid}.")
     except Exception as e:
         return ActionResult.error(f"Error retrieving CostRecord: {e}")
 
@@ -39,7 +39,7 @@ async def audit_costrecord_health(params: ConnectionIdParams, ctx) -> ActionResu
     client = await resolve_client(ctx, params.connection_id)
     try:
         items = await client.list_costs(limit=50)
-        return ActionResult.ok({
+        return ActionResult.success({
             "healthy": True,
             "total_costs": len(items),
             "details": {"sample_count": len(items)},
